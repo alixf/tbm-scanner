@@ -3,6 +3,8 @@ import * as React from "react";
 export class TBMScanner extends React.Component {
 	constructor(props) {
 		super(props);
+		this.fetchData = this.fetchData.bind(this);
+		this.updateData = this.fetchData.bind(this);
 		this.fetchData();
 		setInterval(this.updateData, 1000);
 		this.trips = [];
@@ -10,7 +12,7 @@ export class TBMScanner extends React.Component {
 		this.index = 0;
 	}
 
-	fetchData = async () => {
+	async fetchData() {
 		const response = await fetch(`https://ws.infotbm.com/ws/1.0/network/line-informations/line:TBC:${this.props.lineId}`);
 		const result = await response.json();
 		this.stopPoints = result.routes[0].stopPoints.map(stopPoint => {
@@ -18,7 +20,7 @@ export class TBMScanner extends React.Component {
 		});
 	}
 	
-	updateData = async () => {
+	async updateData() {
 		if(!this.stopPoints) {
 			console.log("no stop points");
 			return;
