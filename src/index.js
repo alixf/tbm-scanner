@@ -1,3 +1,5 @@
+require("babel-core/register");
+require("babel-polyfill");
 import * as React from "react";
 
 export class TBMScanner extends React.Component {
