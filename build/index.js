@@ -3785,7 +3785,7 @@ var TBMScanner = exports.TBMScanner = function (_React$Component) {
 		var _this = _possibleConstructorReturn(this, (TBMScanner.__proto__ || Object.getPrototypeOf(TBMScanner)).call(this, props));
 
 		_this.fetchData = _this.fetchData.bind(_this);
-		_this.updateData = _this.fetchData.bind(_this);
+		_this.updateData = _this.updateData.bind(_this);
 		_this.fetchData();
 		setInterval(_this.updateData, 1000);
 		_this.trips = [];
