@@ -6,7 +6,7 @@ export class TBMScanner extends React.Component {
 	constructor(props) {
 		super(props);
 		this.fetchData = this.fetchData.bind(this);
-		this.updateData = this.fetchData.bind(this);
+		this.updateData = this.updateData.bind(this);
 		this.fetchData();
 		setInterval(this.updateData, 1000);
 		this.trips = [];
